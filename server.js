@@ -11,17 +11,17 @@ var rollbar = new Rollbar({
 });
 
 // record a generic message and send it to Rollbar
-rollbar.log("Hello world!");
+// rollbar.log("Hello world!");
 
 app.use(express.json())
 
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '/public/index.html'))
-})
+// app.get('/', (req, res) => {
+//     res.sendFile(path.join(__dirname, '/public/index.html'))
+// })
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '/public/notindex.html'))
-    rollbar.error('path not valid')
+    // rollbar.error('path not valid')
 })
 
 
