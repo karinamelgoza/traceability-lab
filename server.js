@@ -25,6 +25,11 @@ app.get('/', (req, res) => {
 //     rollbar.critical('critical error!!!')
 //     rollbar.warning('warning!')
 // })
+let nameArr = []
+app.post('/name', (req, res) => {
+    // nameArr.push(res.body.name)
+    return res.body
+})
 
 
 const port = process.env.PORT || 5050

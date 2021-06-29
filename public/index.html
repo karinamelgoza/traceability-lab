@@ -11,10 +11,30 @@
 
 <body>
     <h1>Traceability Lab</h1>
-    <form>
-        <input type="text" placeholder="add name">
-        <button>Add Name</button>
-    </form>
+    <!-- <form> -->
+    <input type="text" placeholder="add name" id="nameInput">
+    <button id="btn">Add Name</button>
+    <!-- </form> -->
+    <section id="container"></section>
+    <script>
+        function addName() {
+            let inputName = document.querySelector('#nameInput')
+            let name = inputName.value
+            let body = {
+                name
+            }
+            axios
+                .post('/names', body)
+                .then(res => {
+                    let container = document.querySelector('#container')
+                    container.append(res.data)
+                })
+                .catch()
+        }
+
+        let btn = document.querySelector('#btn')
+        btn.addEventListener('click', addName())
+    </script>
 </body>
 
 </html>
