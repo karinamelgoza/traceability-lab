@@ -21,8 +21,8 @@ app.use(express.json())
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '/public/notindex.html'))
-    // rollbar.error('path not valid')
-    // rollbar.critical('critical error!!!')
+    rollbar.error('path not valid')
+    rollbar.critical('critical error!!!')
     rollbar.warning('warning!')
 })
 
