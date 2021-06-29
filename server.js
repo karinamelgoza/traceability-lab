@@ -21,6 +21,11 @@ app.get('/', (req, res) => {
 
 app.get('/index', (req, res) => {
     res.data()
+    try {
+
+    } catch (error) {
+        rollbar.log(error)
+    }
 })
 
 
